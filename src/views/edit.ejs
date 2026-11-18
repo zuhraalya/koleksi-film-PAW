@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Film</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <b>koleksi film</b>
+        <div>
+            <a href="/">Kembali ke Daftar</a>
+        </div>
+    </nav>
+
+    <section class="bagian-form">
+        <div class="kotak">
+            <h2>Edit Film</h2>
+
+            <% if (error) { %>
+                <div class="peringatan"><%= error %></div>
+            <% } %>
+
+            <form method="POST" action="/koleksi/<%= film.id %>/update">
+                <div class="grid-form">
+                    <div class="penuh">
+                        <label>Judul</label>
+                        <input type="text" name="judul" value="<%= film.judul %>" required>
+                    </div>
+                    <div>
+                        <label>Sutradara</label>
+                        <input type="text" name="sutradara" value="<%= film.sutradara %>" required>
+                    </div>
+                    <div>
+                        <label>Tahun Rilis</label>
+                        <input type="number" name="tahun" min="1888" max="2100" value="<%= film.tahun %>" required>
+                    </div>
+                    <div>
+                        <label>Genre</label>
+                        <input type="text" name="genre" value="<%= film.genre %>" required>
+                    </div>
+                    <div>
+                        <label>Status Nonton</label>
+                        <select name="status_nonton">
+                            <% STATUS.forEach(s => { %>
+                                <option value="<%= s %>" <%= film.status_nonton === s ? 'selected' : '' %>><%= s %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="penuh">
+                        <label>Rating (0-10, boleh kosong)</label>
+                        <input type="number" name="rating" step="0.1" min="0" max="10" value="<%= film.rating === null ? '' : film.rating %>">
+                    </div>
+                    <div class="penuh">
+                        <label>Review</label>
+                        <textarea name="review" required><%= film.review %></textarea>
+                    </div>
+                </div>
+                <div class="aksi-form">
+                    <button class="tombol" type="submit">Update</button>
+                    <a href="/">Batal</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div class="footer">Koleksi Film</div>
+
+</body>
+</html>

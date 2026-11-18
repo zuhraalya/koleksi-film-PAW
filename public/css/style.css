@@ -1,0 +1,222 @@
+:root {
+  --krem: #fdf6e9;
+  --olive: #c9bd62;
+  --biru: #c3d6ea;
+  --marun: #4a0d12;
+  --pink: #f2c4cf;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--krem);
+  color: var(--marun);
+}
+
+h1, h2 { margin: 0; }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  border-bottom: 2px solid var(--marun);
+}
+.navbar b { font-size: 20px; }
+.navbar a {
+  color: var(--marun);
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 24px;
+}
+.navbar a:hover { text-decoration: underline; }
+
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 70px 40px;
+}
+.hero small {
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.15;
+  margin: 12px 0 16px;
+  max-width: 620px;
+}
+.hero p {
+  max-width: 460px;
+  line-height: 1.7;
+  margin: 0 0 26px;
+}
+.hero-aksi {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.tombol, .jumlah {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 46px;
+  border: 2px solid var(--marun);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+}
+.tombol {
+  background: var(--marun);
+  color: var(--krem);
+  text-decoration: none;
+  cursor: pointer;
+}
+.tombol:hover { opacity: 0.85; }
+.jumlah { background: var(--pink); }
+
+.bagian-form {
+  background: var(--biru);
+  padding: 60px 24px;
+}
+.kotak {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--krem);
+  border: 2px solid var(--marun);
+  border-radius: 12px;
+  padding: 36px;
+}
+.kotak h2 {
+  font-size: 26px;
+  margin-bottom: 22px;
+}
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+}
+.penuh { grid-column: 1 / -1; }
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--marun);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  background: #fff;
+  color: var(--marun);
+}
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+.aksi-form { margin-top: 22px; }
+.aksi-form a {
+  margin-left: 16px;
+  color: var(--marun);
+  font-weight: 600;
+}
+.peringatan {
+  background: var(--pink);
+  border: 2px solid var(--marun);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.daftar {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  overflow-x: auto;
+}
+.daftar h2 {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 2px solid var(--marun);
+}
+th {
+  background: var(--marun);
+  color: var(--krem);
+  padding: 12px;
+  text-align: left;
+  font-size: 13px;
+}
+td {
+  padding: 12px;
+  border-bottom: 1px solid var(--pink);
+  vertical-align: middle;
+  font-size: 14px;
+}
+tr:last-child td { border-bottom: 0; }
+.kosong {
+  text-align: center;
+  padding: 28px;
+}
+
+th:nth-child(1), td:nth-child(1),
+th:nth-child(4), td:nth-child(4),
+th:nth-child(6), td:nth-child(6),
+th:nth-child(7), td:nth-child(7),
+th:nth-child(9), td:nth-child(9) {
+  text-align: center;
+}
+
+.status {
+  display: inline-block;
+  padding: 3px 12px;
+  border: 2px solid var(--marun);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.selesai { background: var(--olive); }
+.belum { background: var(--biru); }
+
+.btn-kecil {
+  border: 2px solid var(--marun);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-edit {
+  background: var(--pink);
+  color: var(--marun);
+}
+.btn-hapus {
+  background: var(--marun);
+  color: var(--krem);
+}
+.aksi form { display: inline; }
+
+.footer {
+  background: var(--marun);
+  color: var(--krem);
+  text-align: center;
+  padding: 18px;
+  font-size: 13px;
+}
